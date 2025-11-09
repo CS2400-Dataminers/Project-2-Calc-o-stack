@@ -17,7 +17,7 @@ The assignment is based on *Data Structures and Abstractions with Java, 5th Edit
 - `ResizeableArrayStack.java` — Resizable array stack implementation
 - `StackInterface.java` — Stack ADT definition
 - `CalculatorTest.java` — Manual and/or JUnit test file
-- `Stacks_Assignment_Steps_Final.xlsx` — Step-by-step infix→postfix and postfix evaluation process (Tasks 1 & 4)
+- `Project Steps.xlsx` — Step-by-step infix→postfix and postfix evaluation process (Tasks 1 & 4)
 - `doc/` — Generated Javadoc documentation
 
 ## How to Run
