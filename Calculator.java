@@ -53,6 +53,34 @@ public class Calculator {
         }
         return postfix.toString();
     }
+        private static double lookupValue(char var, char[] vars, double[] vals) {
+        for (int i = 0; i < vars.length; i++) {
+            if (vars[i] == var) {
+                return vals[i];
+            }
+        }
+    }
 
-     }
+        public static double evaluatePostFix(String postfix, char[] vars, double[] vals) {
+        StackInterface<Double> valueStack = new ResizeableArrayStack<>(); //Creates an empty stack for values
+        for (int i = 0; i < postfix.length(); i++) {
+            char ch = postfix.charAt(i);
+            if (Character.isLetter(ch)) {
+                valueStack.push(lookupValue(ch, vars, vals));
+            } else {
+                switch (ch) {
+                    case '*': case '/': case '+': case '-': case '^': 
+                        double operandTwo = valueStack.pop();
+                        double operandOne = valueStack.pop();
+                        double result = apply(ch, operandOne, operandTwo);
+                        valueStack.push(result);
+                        break;
+                        default:
+                        break;    
+                }
+        }
+        return valueStack.pop();
+    }
+}
+}
 
