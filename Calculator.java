@@ -7,8 +7,7 @@ public class Calculator {
      * @return The result of the evaluation
      */
 
-     public static String convertToPostFix(String infix) {
-        StackInterface<Character> operatorStack = new ResizeableArrayStack<>(); //Creates an empty stack for operators
+     public static String convertToPostFix(String infix, StackInterface<Character> operatorStack) {
         StringBuilder postfix = new StringBuilder(); //Creates an empty string for the postfix expression 
         
         /*
@@ -27,15 +26,18 @@ public class Calculator {
                     case '^': //Highest precedence 
                         operatorStack.push(ch);
                         break;
+
                     case '*': case '/': case '+': case '-': //Equal precedence but depends on the order of its appearance
                         while (!operatorStack.isEmpty() && precedence(operatorStack.peek()) >= precedence(ch)) {
                             postfix.append(operatorStack.pop());
                         }
                         operatorStack.push(ch);
                         break;
+
                     case '(': //Lowest precedence always push onto the stack 
                         operatorStack.push(ch);
                         break;
+
                     case ')': //Pop until the corresponding '(' is found
                         char top = operatorStack.pop();
                         while (top != '(') {
@@ -43,6 +45,7 @@ public class Calculator {
                             top = operatorStack.pop();
                         }
                         break; 
+
                     default:
                         break;
                     }
@@ -61,6 +64,9 @@ public class Calculator {
      * @return
      */
         private static double lookupValue(char var, char[] vars, double[] vals) {
+        if (vars == null || vals == null || vars.length != vals.length) {
+            throw new IllegalArgumentException("Invalid variable or value arrays."); //Throws exception if the arrays are invalid
+        }
         for (int i = 0; i < vars.length; i++) {
             if (vars[i] == var) {
                 return vals[i];
@@ -106,8 +112,7 @@ public class Calculator {
     }
 
     
-        public static double evaluatePostFix(String postfix, char[] vars, double[] vals) {
-        StackInterface<Double> valueStack = new ResizeableArrayStack<>(); //Creates an empty stack for values
+        public static double evaluatePostFix(String postfix, StackInterface<Double> valueStack, char[] vars, double[] vals) {
 
         for (int i = 0; i < postfix.length(); i++) {
             char ch = postfix.charAt(i);
@@ -130,3 +135,21 @@ public class Calculator {
 }
 }
 
+/* 
+ * Main demo 
+*/
+
+public static void main(String[] args) {
+    String infix = "a*b/(c-a)+d*e";
+    String postfix = convertToPostFix(infix);
+    char[] vars = {'a', 'b', 'c', 'd', 'e'};
+    double[] vals = {2, 3, 4, 5, 6};
+    double result = evaluatePostFix(postfix, vars, vals);
+
+    System.out.println("Infix Expression: " + infix);
+    System.out.println("Postfix Expression: " + postfix);
+    System.out.println("Evaluation Result: " + result);
+
+    
+
+}
