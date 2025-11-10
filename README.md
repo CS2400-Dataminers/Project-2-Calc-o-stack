@@ -2,7 +2,7 @@
 
 ## Authors
 - **Josh Guzman** (GitHub: [guzmanthegreat](https://github.com/guzmanthegreat), Email: joshguzman@cpp.edu)
-- **Amr Eldessouky** (GitHub: [AmrEldessouky](https://github.com/AmrEldessouky), Email: aeldessouky@cpp.edu)
+- **Amr Eldessouky** (GitHub: [AmrEldessouky/BottledPat](https://github.com/AmrEldessouky), Email: aeldessouky@cpp.edu)
 
 ## Video Link
 - https://youtu.be/wpv7aXY-vqs
