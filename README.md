@@ -14,6 +14,11 @@ This project implements stack-based algorithms to:
 
 The assignment is based on *Data Structures and Abstractions with Java, 5th Edition* (Carrano & Henry).
 
+## Excel Files
+- [Task 1_ Infix to Postfix.xlsx](https://github.com/user-attachments/files/23447236/Task.1_.Infix.to.Postfix.xlsx)
+- [Task 4_ PostFix Evaluation.xlsx](https://github.com/user-attachments/files/23447235/Task.4_.PostFix.Evaluation.xlsx)
+
+
 ## Files Included
 - `Calculator.java` — Conversion & evaluation logic + demo main
 - `LinkedStack.java` — Linked chain stack implementation
