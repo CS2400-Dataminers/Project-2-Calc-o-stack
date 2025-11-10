@@ -4,6 +4,9 @@
 - **Josh Guzman** (GitHub: [guzmanthegreat](https://github.com/guzmanthegreat), Email: joshguzman@cpp.edu)
 - **Amr Eldessouky** (GitHub: [AmrEldessouky](https://github.com/AmrEldessouky), Email: aeldessouky@cpp.edu)
 
+## Video Link
+- https://youtu.be/wpv7aXY-vqs
+
 ## Overview
 This project implements stack-based algorithms to:
 1. Convert an **infix** expression to **postfix** using a `LinkedStack`.
